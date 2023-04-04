@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: aquamarine; */
+  background-image: url("./background.jpg");
+  /* background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Animal-Care-Google-Slides.jpg"); */
 }
 
 code {
@@ -13,8 +16,66 @@ code {
 }
 
 .App {
-  background-color: aquamarine;
+  background-size: cover;
   text-align: center;
   display: flex;
   flex-direction: column;
+  /* width: 300vh;
+  height: 100vh; */
+}
+
+.Login-or-Registration {
+  background-color: #ffffff81;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #00000075;
+  backdrop-filter: blur(20px);
+}
+
+.Login-or-Registration form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-or-Registration input {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: x-large;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.Login-or-Registration input:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.Login-or-Registration input:focus {
+  background-color: white;
+}
+
+.Login-or-Registration button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4cc2ff;
+  font-size: x-large;
+  font-weight: bold;
+  /* color: white; */
+}
+.Login-or-Registration button:hover {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Login-or-Registration a {
+  margin-top: 20px;
+  color: blue;
+  cursor: pointer;
 }
