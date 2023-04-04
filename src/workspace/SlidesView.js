@@ -3,23 +3,22 @@ import { useState } from "react";
 const SlidePreview = ({ number }) => {
   return (
     <>
-      <div className="Slide-View">
-        <h3>{number}</h3>
-      </div>
+      <div className="Slide-View">{/* <h3>{number}</h3> */}</div>
     </>
   );
 };
 
 const SlidesView = () => {
-  const [slides, setSlides] = useState([
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-  ]);
+  const [slides, setSlides] = useState([{ number: 1 }]);
 
   const handleNewSlide = () => {
     setSlides([...slides, { number: slides[slides.length - 1].number + 1 }]);
+  };
+
+  const handleDeleteSlide = () => {
+    if (slides.length > 1) {
+      setSlides([...slides.slice(0, slides.length - 1)]);
+    }
   };
 
   return (
@@ -31,8 +30,15 @@ const SlidesView = () => {
         ))}
       </div>
       <div>
-        <button onClick={handleNewSlide}>- Delete Slide</button>
         <button onClick={handleNewSlide}>+ New Slide</button>
+        <button
+          onClick={handleDeleteSlide}
+          style={{
+            backgroundColor: "red",
+          }}
+        >
+          - Delete Slide
+        </button>
       </div>
     </div>
   );

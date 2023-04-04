@@ -1,14 +1,20 @@
+import { useState } from "react";
 import LoginRegistration from "./LoginRegistration";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 import WorkSpace from "./workspace/Workspace";
 
 function App() {
+  const [registered, setRegistered] = useState(true);
+
   return (
     <div className="App">
-      {/* <h1>My App</h1> */}
-      <LoginRegistration />
+      {registered ? (
+        <SignIn registered={registered} setRegistered={setRegistered} />
+      ) : (
+        <SignUp registered={registered} setRegistered={setRegistered} />
+      )}
     </div>
-
-    // <WorkSpace />
   );
 }
 
